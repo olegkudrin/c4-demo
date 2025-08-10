@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   generate-diagrams:
-    runs-on: plantuml
+    runs-on: plantuml/plantuml
 
     steps:
     - name: Checkout repository
