@@ -1,4 +1,4 @@
-@startuml fitlife_context
+@startuml FitLife_Context
 title FitLife Context Diagram
 
 top to bottom direction

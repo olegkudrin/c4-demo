@@ -1,4 +1,4 @@
-@startuml fitlife_container
+@startuml FitLife_Container
 title FitLife Container Diagram
 
 top to bottom direction
