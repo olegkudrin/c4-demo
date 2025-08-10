@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   generate-diagrams:
     runs-on: ubuntu-latest
@@ -45,5 +49,5 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add diagrams/**/*.png
         git commit -m "Automated diagram generation"
-        git push origin master
+        git push
       if: success()
