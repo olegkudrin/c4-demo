@@ -12,6 +12,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  PLANTUML_ALLOWLIST_URL: "https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/*"
+
 jobs:
   generate-diagrams:
     runs-on: ubuntu-latest
