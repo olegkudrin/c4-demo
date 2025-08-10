@@ -12,25 +12,13 @@ permissions:
   contents: write
   pull-requests: write
 
-env:
-  PLANTUML_ALLOWLIST_URL: "https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/"
-
 jobs:
   generate-diagrams:
-    runs-on: ubuntu-latest
+    runs-on: plantuml
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Set up Java
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'adopt'
-        java-version: '11'
-
-    - name: Install PlantUML
-      run: sudo apt-get install plantuml
 
     - name: Generate Diagrams
       run: |
