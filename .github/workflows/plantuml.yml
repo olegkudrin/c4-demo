@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 env:
-  PLANTUML_ALLOWLIST_URL: "https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/*"
+  PLANTUML_ALLOWLIST_URL: "https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/"
 
 jobs:
   generate-diagrams:
