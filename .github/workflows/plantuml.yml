@@ -29,19 +29,12 @@ jobs:
     - name: Install PlantUML
       run: sudo apt-get install plantuml
 
-    - name: Download C4-PlantUML library
-      run: |
-        mkdir -p plantuml-libs
-        wget -O plantuml-libs/C4_Context.puml https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-        wget -O plantuml-libs/C4_Container.puml https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-        wget -O plantuml-libs/C4_Component.puml https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
-
     - name: Generate Diagrams
       run: |
-        cd plantuml-libs && plantuml ../diagrams/context/*.puml
-        cd plantuml-libs && plantuml ../diagrams/container/*.puml
-        cd plantuml-libs && plantuml ../diagrams/component/*.puml
-        cd plantuml-libs && plantuml ../diagrams/code/*.puml
+        plantuml diagrams/context/*.puml
+        plantuml diagrams/container/*.puml
+        plantuml diagrams/component/*.puml
+        plantuml diagrams/code/*.puml
 
     - name: Commit Diagrams
       run: |
@@ -49,5 +42,5 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add diagrams/**/*.png
         git commit -m "Automated diagram generation"
-        git push
+        git push origin master
       if: success()
