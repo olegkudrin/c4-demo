@@ -26,10 +26,12 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
+    - name: Install PlantUML
+      run: sudo apt-get install plantuml
+
     - name: Generate Diagrams
       run: |
-        wget https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar
-        java -DPLANTUML_SECURITY_PROFILE=UNSECURE -jar plantuml.jar diagrams/**/*.puml
+        java -DPLANTUML_SECURITY_PROFILE=UNSECURE -jar /usr/share/plantuml/plantuml.jar diagrams/**/*.puml
 
     - name: Commit Diagrams
       run: |
