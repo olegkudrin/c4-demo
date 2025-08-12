@@ -27,7 +27,7 @@ jobs:
         java-version: '11'
 
     - name: Install PlantUML
-      run: sudo apt-get install -q -y plantuml
+      run: sudo apt-get -qq -y install plantuml
 
     - name: Generate Diagrams
       run: |
@@ -41,6 +41,5 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add diagrams/**/*.png
-        git commit -m "Automated diagram generation"
-        git push origin master
+        git diff-index --quiet HEAD || git commit -m "Automated diagram generation" && git push
       if: success()
