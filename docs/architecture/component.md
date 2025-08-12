@@ -4,7 +4,7 @@ title FitLife Context Diagram
 
 top to bottom direction
 
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+!include <C4/C4_Component>
 
 Person(user, "User", "A user of the fitness club system")
 Person(admin, "Administrator", "An administrator managing the system")
